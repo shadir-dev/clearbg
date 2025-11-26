@@ -1,11 +1,12 @@
 import io
+import os
 import cgi
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from rembg import remove
 from PIL import Image
 
-HOST = "127.0.0.1"
-PORT = 5000
+HOST = "0.0.0.0"
+PORT = int(os.environ.get("PORT", 5000))
 
 class BGRemover(BaseHTTPRequestHandler):
 
